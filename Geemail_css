@@ -1,0 +1,13 @@
+#header {
+	font-family: Verdana;
+	background-color: #f1f1f1;
+	border: solid 3px gray;
+	color: red;
+}
+
+body {
+	width: 500px;
+	height: 400px;
+	border: solid 2px gray;
+	padding: 20px;
+}

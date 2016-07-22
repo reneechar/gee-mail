@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type ='text/css' rel= 'stylesheet' href= 'Geemail_css' />
+		<title>Renee's geemail</title>
+		<h1 id="header">Geemail</h1>
+	</head>
+	<body>
+		I am in the body
+	</body>
+</html>
