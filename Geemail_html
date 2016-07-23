@@ -2,10 +2,11 @@
 <html>
 	<head>
 		<link type ='text/css' rel= 'stylesheet' href= 'Geemail_css' />
+		<script type="text/javascript" src="mail-generator.js"></script> 
 		<title>Renee's geemail</title>
 		<h1 id="header">Geemail</h1>
 	</head>
 	<body>
-		I am in the body
+		<script>console.log(window.geemails[0])</script>
 	</body>
 </html>
