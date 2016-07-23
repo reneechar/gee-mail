@@ -7,6 +7,6 @@
 		<h1 id="header">Geemail</h1>
 	</head>
 	<body>
-		<script>console.log(window.geemails[0])</script>
+		<p>window.geemails</p>
 	</body>
 </html>
