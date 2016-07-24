@@ -1,15 +1,14 @@
 .nav {
-  width = 10%;
-  height = 60px;
-  background-color = gray;
-  text-decoration = none;
-  color = black;
-  float = left;
+  width: 10%;
+  height:60px;
+  background-color: gray;
+  text-decoration:none;
+  color: black;
+  float: left;
 }
 
 table {
-  float = right;
-  width = 90%;
-  height = 100%;
-  position = center;
+  float: right;
+  width: 90%;
+  text-align: center;;
 }
