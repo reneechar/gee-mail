@@ -2,4 +2,6 @@
   width = 20px;
   height = 100%;
   background-color = gray;
+  text-decoration = none;
+  color = black;
 }
