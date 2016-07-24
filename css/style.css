@@ -11,4 +11,5 @@ table {
   float = right;
   width = 90%;
   height = 100%;
+  position = center;
 }
