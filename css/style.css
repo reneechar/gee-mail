@@ -7,8 +7,11 @@
   float: left;
 }
 
-.row:active{
-  background-color: lilac;
+.row:hover {
+  background-color: lilac !important; 
+}
+.row:hover td { 
+  background-color: transparent; 
 }
 
 table {
