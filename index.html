@@ -6,8 +6,12 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-	//var output = document.getElementById("main");
-	//output.innerHTML = geemails;
+	var output = document.getElementById("sender1");
+	output.innerHTML = window.geemails[0].sender;
+	var output = document.getElementById("subject1");
+	output.innerHTML = window.geemails[0].subject;
+	var output = document.getElementById("date1");
+	output.innerHTML = window.geemails[0].date;
       };
     </script>
     		<h1>Geemails</h1>
@@ -34,6 +38,11 @@
 				    <td>Jack Smith</td>
 				    <td>another thing</td> 
 				    <td>2:00PM</td>
+				  </tr>
+				  <tr>
+				    <td id = "sender1"></td>
+				    <td id = "subject1"></td> 
+				    <td id = "date1"></td>
 				  </tr>
 			</table>
 		</div>
