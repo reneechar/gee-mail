@@ -7,6 +7,10 @@
   float: left;
 }
 
+.row active{
+  background-color: lilac;
+}
+
 table {
   float: right;
   width: 90%;
