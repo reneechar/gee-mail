@@ -7,7 +7,7 @@
   float: left;
 }
 
-.row active{
+.row:active{
   background-color: lilac;
 }
 
