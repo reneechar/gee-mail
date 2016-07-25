@@ -7,10 +7,10 @@
   float: left;
 }
 
-.row:hover {
+tr:hover {
   background: lilac !important; 
 }
-.row:hover td { 
+tr:hover td { 
   background: transparent; 
 }
 
