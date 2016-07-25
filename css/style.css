@@ -8,10 +8,10 @@
 }
 
 .row:hover {
-  background-color: lilac !important; 
+  background: lilac !important; 
 }
 .row:hover td { 
-  background-color: transparent; 
+  background: transparent; 
 }
 
 table {
