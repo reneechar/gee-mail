@@ -6,7 +6,11 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-	setInterval(generateMessage(), 10000);
+	function newWindowMessage() {	
+		var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+		myWindow.document.write(generateMessage());
+	}
+	setInterval(newWindowMessage(), 3000);
 	
 	var mytable = document.getElementById("myTable");
 	function addAllMessages() {
