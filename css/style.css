@@ -11,14 +11,9 @@ div div {
   font-size: 20px;
 }
 
-/* Broken, needs fixing
-tr:hover {
-  background: lilac !important; 
+tr {
+  background-color: yellow; 
 }
-tr:hover td { 
-  background: transparent; 
-}
-*/
 
 table {
   text-align: center;
