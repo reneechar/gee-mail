@@ -14,7 +14,30 @@
 	var count = document.getElementById("count");
 	count.innerHTML = window.geemails.length;
 	
+	var addMessages = function() {
+		 for (var i = 0; i<window.geemails.length; i++) {
+			 $('.container').prepend(
+			 	"<div class='row'>
+		 			<div class = "sender">This is a test</div>
+					<div class = "subject">subject test</div>
+					<div class = "date">date test</div>
+					<div class = "body">body check</div>
+				 </div>"
+			);
+			$('body').hide();
+			
+			$('.sender').text(window.geemails[i].sender);
+			$('.subject').text(window.geemails[i].subject);
+			$('.date').text(window.geemails[i].date);
+			$('body').text(window.geemails[i].body);
+		 }
+	 };
+
+
+	$(document).ready(addMessages);
 	
+	
+	/*
 	var mytable = document.getElementById("myTable");
 	//generate initial table
 	for (var i =0; i<window.geemails.length; i++) {
@@ -49,7 +72,7 @@
 	//}
 	
 	
-	
+	*/
 	
 
       };
@@ -58,12 +81,14 @@
     
 	</head>
 	<body>
-		<div class="container" id="main">
-			<div class="nav">
+		<div class="nav">
 				Inbox
-				<div id = "count"></div>
-			</div>
+			<div id = "count"></div>
+		</div>
+		<div class="container" id="main">
 			
+			
+			<!--
 			<table style="width:90%" id = "myTable">
 				  <tr>
 				    <th>Sender</th>
@@ -72,6 +97,7 @@
 				  </tr>
 				  
 			</table>
+			-->
 		</div>
 	</body>
 </html>
