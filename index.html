@@ -31,12 +31,10 @@
 	*/
 	
 	var showMessages= function() {
-		$tr.click(function(){
-			var myWindow = window.open("", "MsgWindow", "width=200,height=100");
-			myWindow.document.write("test");
+		$('#myTable').find('tr').click( function(){
+	  		var sender = $(this).find('td:first').text();
+	 		alert('You clicked ' + row);
 		});
-	}
-	
 	$(document).ready(showMessages);
 	
 	
