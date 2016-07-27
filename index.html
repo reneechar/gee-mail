@@ -56,11 +56,8 @@
 		messageContent[z] = window.geemails[z].body;	
 	}
 	
-	function reloadMessages() {
-		addNewMessage();
-	}
 	
-	setInterval(reloadMessages, 10000);
+	setInterval(addNewMessages(), 10000);
 	
 	
 	/* after clicking a row of a message, this function will be called and will generate a new pop up window with the email's body 
