@@ -17,23 +17,13 @@
 	// My sad attempt at using jquery
 	var addMessages = function() {
 		 for (var i = 0; i<window.geemails.length; i++) {
-		 	$('<div class=row').prependTo('.container');
-				 $('<div class = "sender">').text(window.geemails[i].sender).append();
-				 $('<div class = "subject">').text(window.geemails[i].subject).append();
-				 $('<div class = "date">').text(window.geemails[i].date).append();
-		 			<div class = "sender">This is a test</div>
-					<div class = "subject">subject test</div>
-					<div class = "date">date test</div>
-					<div class = "body">body check</div>
-				 </div>"
-			);
-			$('body').hide();
-			
-			$('.sender').text(window.geemails[i].sender);
-			$('.subject').text(window.geemails[i].subject);
-			$('.date').text(window.geemails[i].date);
-			$('body').text(window.geemails[i].body);
-		 }
+		 	$('<div class=row>').prependTo('.container');
+			$('<div class = "sender">').text(window.geemails[i].sender).append('.row');
+			$('<div class = "subject">').text(window.geemails[i].subject).append('.row');
+			$('<div class = "date">').text(window.geemails[i].date).append('.row');
+			$('<div class = "body">').text(window.geemails[i].body).append('.row');
+		}
+		$('body').hide();
 	 };
 
 
