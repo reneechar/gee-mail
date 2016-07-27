@@ -14,11 +14,13 @@
 	var count = document.getElementById("count");
 	count.innerHTML = window.geemails.length;
 	
-	/* My sad attempt at using jquery
+	// My sad attempt at using jquery
 	var addMessages = function() {
 		 for (var i = 0; i<window.geemails.length; i++) {
-			 $('.container').prepend(
-			 	"<div class='row'>
+		 	$('<div class=row').prependTo('.container');
+				 $('<div class = "sender">').text(window.geemails[i].sender).append();
+				 $('<div class = "subject">').text(window.geemails[i].subject).append();
+				 $('<div class = "date">').text(window.geemails[i].date).append();
 		 			<div class = "sender">This is a test</div>
 					<div class = "subject">subject test</div>
 					<div class = "date">date test</div>
@@ -36,9 +38,15 @@
 
 
 	$(document).ready(addMessages());
-	*/
 	
+	/*
+	var showMessages= function() {
+		$('tr').click(function(){
+			alert(this.messageContent)
+		})
+	}
 	
+	var messageContent = [];
 	var mytable = document.getElementById("myTable");
 	//generate initial table
 	for (var i =0; i<window.geemails.length; i++) {
@@ -49,6 +57,7 @@
 		cell1.innerHTML = window.geemails[i].sender;
 		cell2.innerHTML = window.geemails[i].subject;
 		cell3.innerHTML = window.geemails[i].date;
+		messageContent[i]=window.geemails[i].body;
 	}
 	
 	function generateNewTable() {
@@ -60,6 +69,7 @@
 		cell1.innerHTML = window.geemails[window.geemails.length-1].sender;
 		cell2.innerHTML = subjects[window.geemails.length-1].subject;
 		cell3.innerHTML = dates[window.geemails.length-1].body;
+		messageContent[window.geemails.length] = window.geemails[i].body;
 	}
 	
 	
@@ -73,7 +83,7 @@
 	//}
 	
 	
-	
+	*/
 	
 
       };
