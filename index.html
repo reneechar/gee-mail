@@ -35,11 +35,10 @@
 		cell1.innerHTML = window.geemails[window.geemails.length-1].sender;
 		cell2.innerHTML = subjects[window.geemails.length-1].subject;
 		cell3.innerHTML = dates[window.geemails.length-1].body;
-		
 	}
 	
 	
-	//setInterval(generateNewTable, 5000);
+	setInterval(generateNewTable, 5000);
 	
 	
 	// after clicking a row of a message, this function will be called and will generate a new pop up window with the email's body 
