@@ -53,11 +53,12 @@
 		senders[z] = window.geemails[z].sender;
 		subjects[z] = window.geemails[z].subject;
 		dates[z] = window.geemails[z].date;
-		messageContent[z] = window.geemails[z].body;	
+		messageContent[z] = window.geemails[z].body;
+		window.location.reload();
 	}
 	
 	
-	setInterval(addNewMessages(), 10000);
+	setInterval(addNewMessages, 10000);
 	
 	
 	/* after clicking a row of a message, this function will be called and will generate a new pop up window with the email's body 
