@@ -19,8 +19,26 @@ tr:hover td {
   background: transparent; 
 }
 */
-table {
+
+.row {
   float: right;
   width: 90%;
-  text-align: center;;
+  height:100px;
+  background-color:green;
+}
+
+.sender {
+  margin-left:30px;
+}
+
+.subject {
+  margin-left:110px;
+}
+
+.date {
+  margin-left: 300px;
+}
+
+.message {
+}
 }
