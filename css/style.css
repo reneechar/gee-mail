@@ -16,3 +16,7 @@ table {
   text-align: center;
   background-color: yellow;
 }
+
+tr {
+  color: white;
+}
