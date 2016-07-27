@@ -14,26 +14,8 @@
 	var count = document.getElementById("count");
 	count.innerHTML = window.geemails.length;
 	
-	/* My sad attempt at using jquery
-	var addMessages = function() {
-		 for (var i = 0; i<window.geemails.length; i++) {
-		 	$('<div class=row>').prependTo('.container');
-			$('<div class = "sender">').text(window.geemails[i].sender).append('.row');
-			$('<div class = "subject">').text(window.geemails[i].subject).append('.row');
-			$('<div class = "date">').text(window.geemails[i].date).append('.row');
-			$('<div class = "body">').text(window.geemails[i].body).append('.row');
-		}
-		$('.body').hide();
-	 };
-	$(document).ready(addMessages());
-	*/
-	
-	
-	
-	
-	
-	var mytable = document.getElementById("myTable");
 	//generate initial table
+	var mytable = document.getElementById("myTable");
 	for (var i =0; i<window.geemails.length; i++) {
 		var row = mytable.insertRow(i+1);
 		var cell1 = row.insertCell(0);
@@ -46,6 +28,7 @@
 		var cell4 = window.geemails[i].body;
 	}
 	
+	//create new messages and prepend them to the display page, increase the inbox counter
 	function generateNewTable() {
 		window.geemails.push(generateMessage());
 		var row = mytable.insertRow(1);
@@ -63,19 +46,18 @@
 	
 	
 	
-	
-    //setInterval(generateNewTable, 5000);
-	
-	
+	//a new message is created and displayed every 20 seconds.
+    //setInterval(generateNewTable, 20000);
 	
 	
 	
+	
+	//jquery 
 		
 	$(document).ready(function() {
+	    //message box will pop up when a row is clicked and will display the message body for the email. message box can be closed when "close" button is clicked on message box
 	    $(".messageBody").hide();
-	    $("#GM").click(function() {
-    	 	$("#GM").fadeOut(1000);
-	    });
+
 	    $("tr").click(function() {
 	        $(".messageBody").text(this.lastChild);
 	        $(".messageBody").show();
