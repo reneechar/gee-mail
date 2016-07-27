@@ -14,7 +14,7 @@
 	var count = document.getElementById("count");
 	count.innerHTML = window.geemails.length;
 	
-	// My sad attempt at using jquery
+	/* My sad attempt at using jquery
 	var addMessages = function() {
 		 for (var i = 0; i<window.geemails.length; i++) {
 		 	$('<div class=row>').prependTo('.container');
@@ -28,13 +28,17 @@
 
 
 	$(document).ready(addMessages());
+	*/
 	
-	/*
 	var showMessages= function() {
-		$('tr').click(function(){
-			alert(this.messageContent)
-		})
+		$(tr).click(function(){
+			var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+			myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
+		});
 	}
+	
+	$(document).ready(showMessages);
+	
 	
 	var messageContent = [];
 	var mytable = document.getElementById("myTable");
@@ -49,7 +53,7 @@
 		cell3.innerHTML = window.geemails[i].date;
 		messageContent[i]=window.geemails[i].body;
 	}
-	
+	/*
 	function generateNewTable() {
 		window.geemails.push(generateMessage());
 		var row = mytable.insertRow(window.geemails.length+1);
@@ -64,7 +68,7 @@
 	
 	
 	setInterval(generateNewTable(), 5000);
-	
+	*/
 	
 	// after clicking a row of a message, this function will be called and will generate a new pop up window with the email's body 
 	//function messagePopUp() {	
