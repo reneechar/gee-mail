@@ -18,6 +18,6 @@ table {
   color: black;
 }
 
-tr:hover {
-  color: white;
+.container tr:hover {
+  background-color: orange;
 }
