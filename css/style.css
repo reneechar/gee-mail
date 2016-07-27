@@ -20,25 +20,6 @@ tr:hover td {
 }
 */
 
-.row {
-  float: right;
-  width: 90%;
-  height:100px;
-  background-color:green;
-}
-
-.sender {
-  margin-left:30px;
-}
-
-.subject {
-  margin-left:110px;
-}
-
-.date {
-  margin-left: 300px;
-}
-
-.message {
-
+table {
+  text-align: center;
 }
