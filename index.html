@@ -58,12 +58,10 @@
 	
 	function reloadMessages() {
 		addNewMessage();
-		var count = document.getElementById("count");
-		count.innerHTML = window.geemails.length;
 		window.location.reload();
 	}
 	
-	setInterval(reloadMessages(), 100000);
+	setInterval(reloadMessages, 10000);
 	
 	
 	/* after clicking a row of a message, this function will be called and will generate a new pop up window with the email's body 
