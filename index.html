@@ -9,25 +9,37 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 	
+	var addMessages = function() {
+		 for (var i = 0; i<window.geemails.length; i++) {
+			 $('.container').prepend(
+			 	"<div class='row'>
+		 			<div class = "sender"></div>
+					<div class = "subject"></div>
+					<div class = "date"></div>
+					<div class = "body"></div>
+				 </div>"
+			);
+			$('body').hide();
+			
+			$('.sender').text(window.geemails[i].sender);
+			$('.subject').text(window.geemails[i].subject);
+			$('.date').text(window.geemails[i].date);
+			$('body').text(window.geemails[i].body);
+		 }
+	 };
+
+
+	$(document).ready(addMessages);
+	
 	
 	//counter for messages
 	var count = document.getElementById("count");
 	count.innerHTML = window.geemails.length;
 	
 	
-	var mytable = document.getElementById("myTable");
-	//generate initial table
-	for (var i =0; i<window.geemails.length; i++) {
-		var row = mytable.insertRow(i+1);
-		var cell1 = row.insertCell(0);
-		var cell2 = row.insertCell(1);
-		var cell3 = row.insertCell(2);
-		cell1.innerHTML = window.geemails[i].sender;
-		cell2.innerHTML = window.geemails[i].subject;
-		cell3.innerHTML = window.geemails[i].date;
-	}
 	
-	function generateNewTable() {
+	
+	/*function generateNewTable() {
 		window.geemails.push(generateMessage());
 		var row = mytable.insertRow(window.geemails.length+1);
 		var cell1 = row.insertCell(0);
@@ -50,7 +62,7 @@
 	
 	
 	
-	
+	*/
 
       };
     </script>
@@ -58,20 +70,18 @@
     
 	</head>
 	<body>
+		<div class="nav">
+			Inbox
+		<div id = "count"></div>
+		
 		<div class="container" id="main">
-			<div class="nav">
-				Inbox
-				<div id = "count"></div>
-			</div>
 			
-			<table style="width:90%" id = "myTable">
-				  <tr>
-				    <th>Sender</th>
-				    <th>Subject</th> 
-				    <th>Date</th>
-				  </tr>
-				  
-			</table>
+			<div class = "row">	
+				<div class = "sender"></div>
+				<div class = "subject"></div>
+				<div class = "date"></div>
+				<div class = "body"></div>
+			</div>
 		</div>
 	</body>
 </html>
