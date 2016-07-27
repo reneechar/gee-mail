@@ -14,6 +14,7 @@
 	var count = document.getElementById("count");
 	count.innerHTML = window.geemails.length;
 	
+	/* My sad attempt at using jquery
 	var addMessages = function() {
 		 for (var i = 0; i<window.geemails.length; i++) {
 			 $('.container').prepend(
@@ -35,9 +36,9 @@
 
 
 	$(document).ready(addMessages());
+	*/
 	
 	
-	/*
 	var mytable = document.getElementById("myTable");
 	//generate initial table
 	for (var i =0; i<window.geemails.length; i++) {
@@ -72,7 +73,7 @@
 	//}
 	
 	
-	*/
+	
 	
 
       };
@@ -88,7 +89,7 @@
 		<div class="container" id="main">
 			
 			
-			<!--
+			
 			<table style="width:90%" id = "myTable">
 				  <tr>
 				    <th>Sender</th>
@@ -97,7 +98,7 @@
 				  </tr>
 				  
 			</table>
-			-->
+			
 		</div>
 	</body>
 </html>
