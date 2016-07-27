@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<script src="js/mail-generator.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
 
     <script>
@@ -31,10 +31,11 @@
 	*/
 	
 	var showMessages= function() {
-		$('#myTable').find('tr').click( function(){
+		$('#myTable').find('tr').click(function(){
 	  		var sender = $(this).find('td:first').text();
-	 		alert('You clicked ' + row);
+	 		alert('You clicked ' + sender);
 		});
+	}
 	$(document).ready(showMessages);
 	
 	
