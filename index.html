@@ -43,7 +43,7 @@
 		cell1.innerHTML = window.geemails[i].sender;
 		cell2.innerHTML = window.geemails[i].subject;
 		cell3.innerHTML = window.geemails[i].date;
-		cell4 =window.geemails[i].body;
+		var cell4 = window.geemails[i].body;
 	}
 	
 	function generateNewTable() {
@@ -52,10 +52,11 @@
 		var cell1 = row.insertCell(0);
 		var cell2 = row.insertCell(1);
 		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
 		cell1.innerHTML = window.geemails[(window.geemails.length)-1].sender;
 		cell2.innerHTML = window.geemails[(window.geemails.length)-1].subject;
 		cell3.innerHTML = window.geemails[(window.geemails.length)-1].date;
-		messageContent.push(window.geemails[i].body);
+		var cell4 = window.geemails[window.geemails.length -1].body;
 	}
 	
 	
@@ -64,19 +65,23 @@
     //setInterval(generateNewTable, 5000);
 	
 	
-	// after clicking a row of a message, this function will be called and will generate a new pop up window with the email's body 
-	//function messagePopUp() {	
-	//	var myWindow = window.open("", "MsgWindow", "width=1000,height=500");
-	//	myWindow.document.write(messageContent);
-	//}
+	
 	
 	
 		
 	$(document).ready(function() {
+	    $(".messageBody").hide();
 	    $("#GM").click(function() {
     	 	$("#GM").fadeOut(1000);
 	    });
+	    $("tr").click(function() {
+	        $(".messageBody").text(this.cell4);
+	        $(".messageBody").show();
+	    });
 	});
+	
+	
+	
 	
       };
     </script>
@@ -100,6 +105,9 @@
 				  </tr>
 				  
 			</table>
+			
+			<div class = "messageBody">
+			</div>
 			
 		</div>
 	</body>
