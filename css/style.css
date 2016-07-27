@@ -15,8 +15,9 @@ div div {
 table {
   text-align: center;
   background-color: yellow;
+  color: black;
 }
 
-tr {
+tr:hover {
   color: red;
 }
