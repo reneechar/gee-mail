@@ -10,6 +10,11 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 	
+	
+	//counter for messages
+	var count = document.getElementById("count");
+	count.innerHTML = window.geemails.length;
+	
 	var senders=[];
 	var subjects=[];
 	var dates=[];
@@ -53,10 +58,12 @@
 	
 	function reloadMessages() {
 		addNewMessage();
+		var count = document.getElementById("count");
+		count.innerHTML = window.geemails.length;
 		window.location.reload();
 	}
 	
-	setInterval(reloadMessages(), 10000);
+	setInterval(reloadMessages(), 100000);
 	
 	
 	/* after clicking a row of a message, this function will be called and will generate a new pop up window with the email's body 
@@ -66,9 +73,6 @@
 	}
 	*/
 	
-	//counter for messages
-	var count = document.getElementById("count");
-	count.innerHTML = window.geemails.length;
 	
 	
 
