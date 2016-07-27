@@ -57,6 +57,8 @@
 		cell2.innerHTML = window.geemails[(window.geemails.length)-1].subject;
 		cell3.innerHTML = window.geemails[(window.geemails.length)-1].date;
 		var cell4 = window.geemails[window.geemails.length -1].body;
+		
+		count.innerHTML = window.geemails.length;
 	}
 	
 	
@@ -75,7 +77,7 @@
     	 	$("#GM").fadeOut(1000);
 	    });
 	    $("tr").click(function() {
-	        $(".messageBody").text(this.cell4);
+	        $(".messageBody").text(this.lastChild);
 	        $(".messageBody").show();
 	    });
 	    $(".closeButton").click(function() {
