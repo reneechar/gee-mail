@@ -78,6 +78,9 @@
 	        $(".messageBody").text(this.cell4);
 	        $(".messageBody").show();
 	    });
+	    $(".closeButton").click(function() {
+	        $(".messageBody").hide();
+	    });
 	});
 	
 	
@@ -107,6 +110,7 @@
 			</table>
 			
 			<div class = "messageBody">
+			    <div class = "closeButton">Close</div>
 			</div>
 			
 		</div>
