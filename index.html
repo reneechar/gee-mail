@@ -10,9 +10,10 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 	
-	
-
-	
+	var senders=[];
+	var subjects=[];
+	var dates=[];
+	var messageContent=[];
 	
 	var mytable = document.getElementById("myTable");
 	function addAllMessages() {
@@ -24,16 +25,19 @@
 			cell1.innerHTML = window.geemails[i].sender;
 			cell2.innerHTML = window.geemails[i].subject;
 			cell3.innerHTML = window.geemails[i].date;
-			messageContent = window.geemails[i].body;
+			senders[i] = window.geemails[i].sender;
+			subjects[i] = window.geemails[i].subject;
+			dates[i] = window.geemails[i].date;
+			messageContent[i] = window.geemails[i].body;
 		}
 	}
 	addAllMessages();
 	
-	var messageContent;	
 	
-	function addAdditionalMessage() {
+	
+	function addNewMessage() {
 		var z = window.geemails.length 
-		window.geemails[z].push(generateMessage);
+		window.geemails.push(generateMessage());
 		var row = mytable.insertRow(z+1);
 		var cell1 = row.insertCell(0);
 		var cell2 = row.insertCell(1);
@@ -41,10 +45,18 @@
 		cell1.innerHTML = window.geemails[z].sender;
 		cell2.innerHTML = window.geemails[z].subject;
 		cell3.innerHTML = window.geemails[z].date;
+		senders[z] = window.geemails[z].sender;
+		subjects[z] = window.geemails[z].subject;
+		dates[z] = window.geemails[z].date;
 		messageContent = window.geemails[z].body;	
 	}
 	
-	setInterval(addAdditionalMessage(), 3000);
+	function reloadMessages() {
+		addNewMessage();
+		window.location.reload();
+	}
+	
+	setInterval(reloadMessages(), 3000);
 	
 	
 	/* after clicking a row of a message, this function will be called and will generate a new pop up window with the email's body 
