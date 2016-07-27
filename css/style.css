@@ -11,10 +11,8 @@ div div {
   font-size: 20px;
 }
 
-.container {
-  background-color: yellow; 
-}
 
 table {
   text-align: center;
+  background-color: yellow;
 }
