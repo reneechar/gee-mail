@@ -15,59 +15,34 @@
 	var count = document.getElementById("count");
 	count.innerHTML = window.geemails.length;
 	
-	var senders=[];
-	var subjects=[];
-	var dates=[];
-	var messageContent=[];
-	var initialLength = window.geemails.length;
 	
 	var mytable = document.getElementById("myTable");
-	//generate initial values into global arrays
-	for (var i = 0; i < initialLength; i++) {
-		senders[i] = window.geemails[i].sender;
-		subjects[i] = window.geemails[i].subject;
-		dates[i] = window.geemails[i].date;
-		messageContent[i] = window.geemails[i].body;
-	}
-	
 	//generate initial table
-	for (var i =0; i<senders.length; i++) {
+	for (var i =0; i<window.geemails.length; i++) {
 		var row = mytable.insertRow(i+1)
 		var cell1 = row.insertCell(0);
 		var cell2 = row.insertCell(1);
 		var cell3 = row.insertCell(2);
-		cell1.innerHTML = senders[i];
-		cell2.innerHTML = subjects[i];
-		cell3.innerHTML = dates[i];
+		cell1.innerHTML = window.geemails[i].sender;
+		cell2.innerHTML = window.geemails[i].subject;
+		cell3.innerHTML = window.geemails[i].date;
 		}
-	}
-	
-	function addNewMessagesToArray() {
-		var z = window.geemails.length 
-		window.geemails.push(generateMessage());
-		senders[z] = window.geemails[z].sender;
-		subjects[z] = window.geemails[z].subject;
-		dates[z] = window.geemails[z].date;
-		messageContent[z] = window.geemails[z].body;
 	}
 	
 	function generateNewTable() {
-		var row = mytable.insertRow(senders.length+1)
+		window.geemails.push(generateMessage());
+		var row = mytable.insertRow(window.geemails.length+1)
 		var cell1 = row.insertCell(0);
 		var cell2 = row.insertCell(1);
 		var cell3 = row.insertCell(2);
-		cell1.innerHTML = senders[senders.length-1];
-		cell2.innerHTML = subjects[subjects.length-1];
-		cell3.innerHTML = dates[dates.length-1];
+		cell1.innerHTML = window.geemails[window.geemails.length-1].sender;
+		cell2.innerHTML = subjects[window.geemails.length-1].subject;
+		cell3.innerHTML = dates[window.geemails.length-1].body;
 		}
 	}
 	
-	function reloadUpdatedTable() {
-		addNewMessagesToArray();
-		generateNewTable();
-	}
 	
-	setInterval(reloadUpdatedTable, 5000);
+	setInterval(generateNewTable, 5000);
 	
 	
 	/* after clicking a row of a message, this function will be called and will generate a new pop up window with the email's body 
