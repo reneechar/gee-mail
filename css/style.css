@@ -51,11 +51,12 @@ table {
 
 
 #messageBox {
-  height: 100px;
-  width: 200px;
+  height: 200px;
+  width: 100%;
   background-color:fadb54;
   border-style: outset
-  border-color = f47a35;
+  border-color: = f47a35;
   clear:both;
   margin: auto;
+  font-size: 12px;
 }
