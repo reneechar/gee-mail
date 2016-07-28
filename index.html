@@ -12,19 +12,18 @@
 		
 		//jquery
 		function runJquery() {
-			//alert box will pop up with email message when row is clicked
+			//message box will pop up with email message when row is clicked
+			//when message box is clicked, the messagebox will be hidden
 			$(".theMessageBody").hide();
 			$("#messageBox").hide();
 			$("tr").click(function(){
-				
-				var themsg = this.cells[3];
 				var messageInBox = document.getElementById("displayedMessage");
+				var themsg = $(this.cells[3]).get(0).innerHTML;
 				messageInBox.textContent = themsg;
 				$("#messageBox").show();
 			});
 			$("#messageBox").click(function(){
 				$("#messageBox").hide();
-			
 			});
 		}
 		//counter for messages
