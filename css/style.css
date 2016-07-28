@@ -50,3 +50,11 @@ table {
   background-color: f47a35;
   color:48372f;
 }
+
+
+#messageBox {
+  height: 100px;
+  width: 200px;
+  background-color:fff6de;
+  border: 3px solid fff6de;
+}
