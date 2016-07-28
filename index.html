@@ -5,14 +5,26 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
 
 	 <script>
-	      window.onload = function(){
+	  window.onload = function(){
 	        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE.
 	        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
-
+		//jquery
+		function runJquery() {
+			$(document).ready(function() {
+				//alert box will pop up with email message when row is clicked
+				$(".theMessageBody").hide();
+				$("tr").click(function(){
+					var popupMessage = this.cells[3];
+					var alt = popupMessage.innerHTML;
+					alert(alt);
+				});
+			});
+		}
 		//counter for messages
 		var count = document.getElementById("count");
 		count.innerHTML = window.geemails.length;
+
 
 		//generate initial table
 		var mytable = document.getElementById("myTable");
@@ -28,6 +40,7 @@
 			cell3.innerHTML = window.geemails[i].date;
 			theMessage.className = "theMessageBody";
 		}
+		runJquery();
 
 		//create new messages and prepend them to the display page, increase the inbox counter
 		function generateNewTable() {
@@ -41,32 +54,23 @@
 			cell1.innerHTML = window.geemails[(window.geemails.length)-1].sender;
 			cell2.innerHTML = window.geemails[(window.geemails.length)-1].subject;
 			cell3.innerHTML = window.geemails[(window.geemails.length)-1].date;
+
 			theMessage.className = "theMessageBody";
+
 			count.innerHTML = window.geemails.length;
-			$(document).ready(function() {
-			    //alert box will pop up with email message when row is clicked
-				$(".theMessageBody").hide();
-			});
+			//hide the message column
+			runJquery();
 		}
 
+
+
 		//a new message is created and displayed every 20 seconds.
-		setInterval(generateNewTable, 20000);
+	  	setInterval(generateNewTable, 20000);
 
-		//jquery
-		$(document).ready(function() {
-		    	//alert box will pop up with email message when row is clicked
-			$(".theMessageBody").hide();
-			$("tr").click(function(){
-				var popupMessage = this.cells[3];
-				var alt = popupMessage.innerHTML;
-				alert(alt);
-			});
-		});
-
-		};
+	  };
 	</script>
 
-	 <h1 id = "GM">Geemails</h1>
+	<h1 id = "GM">Geemails</h1>
 
 	</head>
 	<body>
