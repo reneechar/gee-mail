@@ -19,7 +19,7 @@
 				$("#messageBox").show();
 				
 				var messageInBox = document.getElementById("displayedMessage");
-				messageInBox = this.cells[3].innerHTML;
+				messageInBox.innerHTML = this.cells[3];
 			});
 			$("#messageBox").click(function(){
 				$("#messageBox").hide();
