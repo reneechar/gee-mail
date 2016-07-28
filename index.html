@@ -4,99 +4,89 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
 
-    <script>
-      window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-	
-	
-	//counter for messages
-	var count = document.getElementById("count");
-	count.innerHTML = window.geemails.length;
-	
-	//generate initial table
-	var mytable = document.getElementById("myTable");
-	for (var i =0; i<window.geemails.length; i++) {
-		var row = mytable.insertRow(i+1);
-		var cell1 = row.insertCell(0);
-		var cell2 = row.insertCell(1);
-		var cell3 = row.insertCell(2);
-		var cell4 = row.insertCell(3);
-		cell1.innerHTML = window.geemails[i].sender;
-		cell2.innerHTML = window.geemails[i].subject;
-		cell3.innerHTML = window.geemails[i].date;
-		var cell4 = window.geemails[i].body;
-	}
-	
-	//create new messages and prepend them to the display page, increase the inbox counter
-	function generateNewTable() {
-		window.geemails.push(generateMessage());
-		var row = mytable.insertRow(1);
-		var cell1 = row.insertCell(0);
-		var cell2 = row.insertCell(1);
-		var cell3 = row.insertCell(2);
-		var cell4 = row.insertCell(3);
-		cell1.innerHTML = window.geemails[(window.geemails.length)-1].sender;
-		cell2.innerHTML = window.geemails[(window.geemails.length)-1].subject;
-		cell3.innerHTML = window.geemails[(window.geemails.length)-1].date;
-		var cell4 = window.geemails[window.geemails.length -1].body;
-		
-		count.innerHTML = window.geemails.length;
-	}
-	
-	
-	
-	//a new message is created and displayed every 20 seconds.
-    //setInterval(generateNewTable, 20000);
-	
-	
-	
-	
-	//jquery 
-		
-	$(document).ready(function() {
-	    //message box will pop up when a row is clicked and will display the message body for the email. message box can be closed when "close" button is clicked on message box
-	    $(".messageBody").hide();
+	 <script>
+	      window.onload = function(){
+	        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE.
+	        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
-	    $("tr").click(function() {
-	        $(".messageBody").text(this.lastChild);
-	        $(".messageBody").show();
-	    });
-	    $(".closeButton").click(function() {
-	        $(".messageBody").hide();
-	    });
-	});
-	
-	
-	
-	
-      };
-    </script>
-    		<h1 id = "GM">Geemails</h1>
-    
+
+		//counter for messages
+		var count = document.getElementById("count");
+		count.innerHTML = window.geemails.length;
+
+		//generate initial table
+		var mytable = document.getElementById("myTable");
+		for (var i =0; i<window.geemails.length; i++) {
+			var row = mytable.insertRow(i+1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var theMessage = row.insertCell(3);
+			theMessage.innerHTML = window.geemails[i].body;
+			cell1.innerHTML = window.geemails[i].sender;
+			cell2.innerHTML = window.geemails[i].subject;
+			cell3.innerHTML = window.geemails[i].date;
+			theMessage.className = "theMessageBody";
+		}
+
+		//create new messages and prepend them to the display page, increase the inbox counter
+		function generateNewTable() {
+			window.geemails.push(generateMessage());
+			var row = mytable.insertRow(1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var theMessage = row.insertCell(3);
+			theMessage.innerHTML = window.geemails[window.geemails.length -1].body;
+			cell1.innerHTML = window.geemails[(window.geemails.length)-1].sender;
+			cell2.innerHTML = window.geemails[(window.geemails.length)-1].subject;
+			cell3.innerHTML = window.geemails[(window.geemails.length)-1].date;
+			theMessage.className = "theMessageBody";
+			count.innerHTML = window.geemails.length;
+			$(document).ready(function() {
+			    //alert box will pop up with email message when row is clicked
+				$(".theMessageBody").hide();
+				$("tr").click(function(){
+					var popupMessage = this.cells[3];
+					var alt = popupMessage.innerHTML;
+					alert(alt);
+				});
+			});
+		}
+
+		//a new message is created and displayed every 20 seconds.
+		setInterval(generateNewTable, 20000);
+
+		//jquery
+		$(document).ready(function() {
+		    	//alert box will pop up with email message when row is clicked
+			$(".theMessageBody").hide();
+			$("tr").click(function(){
+				var popupMessage = this.cells[3];
+				var alt = popupMessage.innerHTML;
+				alert(alt);
+			});
+		});
+
+		};
+	</script>
+
+	    	<h1 id = "GM">Geemails</h1>
+
 	</head>
 	<body>
-		<div class="nav">
-				Inbox
+		<div style="width:29%" class="nav">
+				<p>Inbox</p>
 			<div id = "count"></div>
 		</div>
 		<div class="container" id="main">
-			
-			
-			
-			<table style="width:90%" id = "myTable">
+			<table style="width:70%" id = "myTable">
 				  <tr>
-				    <th>Sender</th>
-				    <th>Subject</th> 
-				    <th>Date</th>
+				    <th class = 'headers'>Sender</th>
+				    <th class = 'headers'>Subject</th>
+				    <th class = 'headers'>Date</th>
 				  </tr>
-				  
 			</table>
-			
-			<div class = "messageBody">
-			    <div class = "closeButton">Close</div>
-			</div>
-			
 		</div>
 	</body>
 </html>
