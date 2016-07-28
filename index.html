@@ -20,10 +20,10 @@
 				var messageInBox = document.getElementById("displayedMessage");
 				var themsg = $(this.cells[3]).get(0).innerHTML;
 				messageInBox.textContent = themsg;
-				$("#messageBox").show();
+				$("#messageBox").slideDown();
 			});
 			$("#messageBox").click(function(){
-				$("#messageBox").hide();
+				$("#messageBox").slideUp();
 			});
 		}
 		//counter for messages
