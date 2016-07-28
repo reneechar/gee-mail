@@ -16,10 +16,11 @@
 			$(".theMessageBody").hide();
 			$("#messageBox").hide();
 			$("tr").click(function(){
-				$("#messageBox").show();
 				
+				var themsg = this.cells[3];
 				var messageInBox = document.getElementById("displayedMessage");
-				messageInBox.innerHTML = this.cells[3];
+				messageInBox.innerHTML = themsg;
+				$("#messageBox").show();
 			});
 			$("#messageBox").click(function(){
 				$("#messageBox").hide();
