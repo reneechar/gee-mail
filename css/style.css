@@ -8,7 +8,7 @@ html {
   height:40px;
   background-color: fadb54;
   float: left;
-  border: 5px solid ffb3ff;
+  border: thin solid ffb3ff;
 }
 
 h3 {
